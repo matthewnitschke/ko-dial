@@ -1,0 +1,9 @@
+svg {
+	width: 100px height: 100px;
+	transform: rotate(-90deg);
+	border-radius: 50%;
+}
+
+circle {
+	fill: none;
+}

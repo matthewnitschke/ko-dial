@@ -14,7 +14,6 @@ ko.components.register("ko-dial", {
       width: 32,
     }
 
-    // changeable properties
     extendDefaults(params, defaults);
 
     var clicking = false;
