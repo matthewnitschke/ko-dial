@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dropdown</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-debug.js"></script>
+
+  <link rel="stylesheet" href="lib/ko-component-page.css">
+  <script src="lib/ko-component-page.js"></script>
+
+  <link rel="stylesheet" href="../src/ko-dial.css">
+  <script src="../src/ko-dial.js"></script>
+
+  <style>
+    .dial-wrapper {
+      width: 10rem;
+      height: 10rem;
+    }
+  </style>
+</head>
+<body>
+
+  <ko-component-page params="{componentName: '<ko-dial>'}">
+
+    <ko-component-parameters>
+      <ko-component-parameter required params="{name: 'percent', type: 'observable<Integer>', description: 'the percent of the dial'}"></ko-component-parameter>
+      <ko-component-parameter params="{name: 'color', type: 'string', description: 'a hex value of color of the dial'}"></ko-component-parameter>
+      <ko-component-parameter params="{name: 'backgroundColor', type: 'string', description: 'a hex value of the background color'}"></ko-component-parameter>
+      <ko-component-parameter params="{name: 'sensitivity', type: 'integer', description: 'how sensitive the dial is'}"></ko-component-parameter>
+      <ko-component-parameter params="{name: 'width', type: 'integer', description: 'the width of the dial's inside'}"></ko-component-parameter>
+    </ko-component-parameters>
+
+
+    <ko-component-examples>
+      <ko-component-example params="{label: 'Basic Implementation'}">
+
+        <div class="dial-wrapper">
+          <ko-dial params="{percent: value}"></ko-dial>
+        </div>
+
+        <div>Dial's value: <span data-bind="text: value"></span></div>
+
+        <ko-component-example-script>
+          {
+            value: ko.observable(20)
+          }
+        </ko-component-example-script>
+      </ko-component-example>
+    </ko-component-examples>
+  </ko-component-page>
+
+  <script>
+    ko.applyBindings();
+  </script>
+
+</body>
+</html>

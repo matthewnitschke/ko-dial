@@ -60,7 +60,6 @@ ko.components.register("ko-dial", {
     }
   },
   template: `
-  <input data-bind="textInput: percent">
   <div data-bind="event: {mousedown: mousedown}" style="cursor: pointer">
     <svg viewBox="0 0 32 32" data-bind="attr: {style: 'background-color: ' + ko.unwrap(backgroundColor)}">
       <circle r="16" cx="16" cy="16" data-bind="attr: { stroke: ko.unwrap(color), 'stroke-dasharray': percent()+.46 + ' 100', 'stroke-width': ko.unwrap(width) }"></circle>
